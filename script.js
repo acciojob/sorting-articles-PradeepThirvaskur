@@ -14,11 +14,14 @@ const bands = [
     'An Old Dog'
 ];
 
-let ul = document.querySelector(".band");  // Select the ul element with id "band"
-bands.forEach((item) => {
-    let li = document.createElement("li");
-    li.className = "list-items";  // Use className instead of id for list items
-    li.textContent = item;
-    console.log(item);
-    ul.appendChild(li);  // Append li elements to the ul
-});
+let ul= document.createElement("ul");
+ul.id="band";
+
+bands.forEach((item)=>{
+    let li= document.createElement("li");
+    li.id="list-items";
+    li.textContent=item;
+    ul.appendChild(li);
+})
+
+document.body.appendChild(ul);
