@@ -1,28 +1,15 @@
-const bands = [
-    'The Plot in You',
-    'The Devil Wears Prada',
-    'Pierce the Veil',
-    'Norma Jean', 
-    'The Bled', 
-    'Say Anything',
-    'The Midway State',
-    'We Came as Romans',
-    'Counterparts',
-    'Oh, Sleeper', 
-    'A Skylit Drive', 
-    'Anywhere But Here', 
-    'An Old Dog'
-];
+//your JS code here. If required.
+function strip(bandName) {
+  return bandName.replace(/^(a |the |an )/i, '').trim();
+}
 
-// Sort the bands array
-bands.sort();
+const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
 
 let ul= document.createElement("ul");
-ul.id="bands"; // Change this to "bands"
+ul.id="bands";
 
-bands.forEach((item)=>{
+sortedBands.forEach((item)=>{
     let li= document.createElement("li");
-    li.id="list-items";
     li.textContent=item;
     ul.appendChild(li);
 })
