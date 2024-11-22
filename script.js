@@ -14,8 +14,11 @@ const bands = [
     'An Old Dog'
 ];
 
+// Sort the bands array
+bands.sort();
+
 let ul= document.createElement("ul");
-ul.id="band";
+ul.id="bands"; // Change this to "bands"
 
 bands.forEach((item)=>{
     let li= document.createElement("li");
