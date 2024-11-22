@@ -1,17 +1,28 @@
-//your JS code here. If required.
-function strip(bandName) {
-  return bandName.replace(/^(a |the |an )/i, '').trim();
-}
+const bands = [
+    'The Plot in You',
+    'The Devil Wears Prada',
+    'Pierce the Veil',
+    'Norma Jean', 
+    'The Bled', 
+    'Say Anything',
+    'The Midway State',
+    'We Came as Romans',
+    'Counterparts',
+    'Oh, Sleeper', 
+    'A Skylit Drive', 
+    'Anywhere But Here', 
+    'An Old Dog'
+];
 
-const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+bands.sort();
+console.log(bands.sort());
 
-let ul= document.createElement("ul");
-ul.id="bands";
+let ul=document.createElement("ul");
+ul.id="band";
 
-sortedBands.forEach((item)=>{
+bands.forEach((item)=>{
     let li= document.createElement("li");
-    li.textContent=item;
-    ul.appendChild(li);
+    li.innerText=item;
+    ul.append(li);
 })
-
-document.body.appendChild(ul);
+document.body.append(ul);
